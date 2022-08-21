@@ -1,6 +1,7 @@
 package com.ksyoo.spring_master_class;
 
 import com.ksyoo.spring_master_class.understanding_autowired.BinarySearchImpl;
+import com.ksyoo.spring_master_class.understanding_cdi.SomeCdiService;
 import com.ksyoo.understanding_component_scan.ComponentDao;
 import com.ksyoo.spring_master_class.understanding_scope.PersonDao;
 import org.slf4j.Logger;
@@ -25,9 +26,10 @@ public class SpringMasterClassApplication {
         System.out.println("java version:   " + SystemProperties.get("java.version"));
         ApplicationContext applicationContext = SpringApplication.run(SpringMasterClassApplication.class, args);
 
-        understandingAutoWired(applicationContext);
+//        understandingAutoWired(applicationContext);
 //        understandingScope(applicationContext);
 //        understandingComponentScan(applicationContext);
+        understandingContextsAndDependencyInjection(applicationContext);
     }
 
     static void understandingAutoWired(ApplicationContext applicationContext) {
@@ -58,5 +60,12 @@ public class SpringMasterClassApplication {
         LOGGER.info("{}", componentDao.getComponentJdbcConnection());
         LOGGER.info("{}", componentDao2);
         LOGGER.info("{}", componentDao2.getComponentJdbcConnection());
+    }
+
+    static void understandingContextsAndDependencyInjection(ApplicationContext applicationContext) {
+        SomeCdiService someCdiService = applicationContext.getBean((SomeCdiService.class));
+
+        LOGGER.info("{}", someCdiService);
+        LOGGER.info("{}", someCdiService.getSomeCdiDao());
     }
 }
