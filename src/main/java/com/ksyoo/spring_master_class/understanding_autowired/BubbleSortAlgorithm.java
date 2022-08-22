@@ -3,12 +3,12 @@ package com.ksyoo.spring_master_class.understanding_autowired;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
+//import javax.annotation.PostConstruct;
+//import javax.annotation.PreDestroy;
 
-@Component
+@Service
 public class BubbleSortAlgorithm implements SortAlgorithm {
     private Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
@@ -21,12 +21,12 @@ public class BubbleSortAlgorithm implements SortAlgorithm {
         // * logic for bubble sort
         return number;
     }
-
-    @PostConstruct
-    public void postConstruct() {
-        LOGGER.info("    postConstruct BubbleSortAlgorithm Bean");
-    }
-
-    @PreDestroy
-    public void PreDestroy() { LOGGER.info("    PreDestroy BubbleSortAlgorithm Bean"); }
+//
+//    @PostConstruct
+//    public void postConstruct() {
+//        LOGGER.info("    postConstruct BubbleSortAlgorithm Bean");
+//    }
+//
+//    @PreDestroy
+//    public void PreDestroy() { LOGGER.info("    PreDestroy BubbleSortAlgorithm Bean"); }
 }

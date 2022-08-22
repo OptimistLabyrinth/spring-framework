@@ -6,12 +6,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
+//import javax.annotation.PostConstruct;
+//import javax.annotation.PreDestroy;
 
-@Component
+@Controller
 @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
 public class BinarySearchImpl {
     private Logger LOGGER = LoggerFactory.getLogger(this.getClass());
@@ -31,12 +31,12 @@ public class BinarySearchImpl {
         // * return the result
         return 3;
     }
-
-    @PostConstruct
-    public void postConstruct() {
-        LOGGER.info("    postConstruct BinarySearchImpl Bean");
-    }
-
-    @PreDestroy
-    public void PreDestroy() { LOGGER.info("    PreDestroy BinarySearchImpl Bean"); }
+//
+//    @PostConstruct
+//    public void postConstruct() {
+//        LOGGER.info("    postConstruct BinarySearchImpl Bean");
+//    }
+//
+//    @PreDestroy
+//    public void PreDestroy() { LOGGER.info("    PreDestroy BinarySearchImpl Bean"); }
 }

@@ -4,8 +4,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
+//import javax.annotation.PostConstruct;
+//import javax.annotation.PreDestroy;
 
 @Component
 public class ComponentJdbcConnection {
@@ -14,12 +14,12 @@ public class ComponentJdbcConnection {
     public ComponentJdbcConnection() {
         LOGGER.info("Component JDBC Connection OK");
     }
-
-    @PostConstruct
-    public void postConstruct() {
-        LOGGER.info("    postConstruct ComponentJdbcConnection Bean");
-    }
-
-    @PreDestroy
-    public void PreDestroy() { LOGGER.info("    PreDestroy ComponentJdbcConnection Bean"); }
+//
+//    @PostConstruct
+//    public void postConstruct() {
+//        LOGGER.info("    postConstruct ComponentJdbcConnection Bean");
+//    }
+//
+//    @PreDestroy
+//    public void PreDestroy() { LOGGER.info("    PreDestroy ComponentJdbcConnection Bean"); }
 }

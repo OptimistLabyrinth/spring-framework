@@ -3,12 +3,12 @@ package com.ksyoo.understanding_component_scan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
+//import javax.annotation.PostConstruct;
+//import javax.annotation.PreDestroy;
 
-@Component
+@Repository
 public class ComponentDao {
     private Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
@@ -27,12 +27,12 @@ public class ComponentDao {
     public void setComponentJdbcConnection(ComponentJdbcConnection componentJdbcConnection) {
         this.componentJdbcConnection = componentJdbcConnection;
     }
-
-    @PostConstruct
-    public void postConstruct() {
-        LOGGER.info("    postConstruct ComponentDao Bean");
-    }
-
-    @PreDestroy
-    public void PreDestroy() { LOGGER.info("    PreDestroy ComponentDao Bean"); }
+//
+//    @PostConstruct
+//    public void postConstruct() {
+//        LOGGER.info("    postConstruct ComponentDao Bean");
+//    }
+//
+//    @PreDestroy
+//    public void PreDestroy() { LOGGER.info("    PreDestroy ComponentDao Bean"); }
 }

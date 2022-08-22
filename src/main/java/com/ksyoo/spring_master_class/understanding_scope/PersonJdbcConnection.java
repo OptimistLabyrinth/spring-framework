@@ -7,8 +7,8 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
+//import javax.annotation.PostConstruct;
+//import javax.annotation.PreDestroy;
 
 @Component
 @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE, proxyMode = ScopedProxyMode.TARGET_CLASS)
@@ -18,12 +18,12 @@ public class PersonJdbcConnection {
     public PersonJdbcConnection() {
         LOGGER.info("Person JDBC Connection OK");
     }
-
-    @PostConstruct
-    public void postConstruct() {
-        LOGGER.info("    postConstruct PersonJdbcConnection Bean");
-    }
-
-    @PreDestroy
-    public void PreDestroy() { LOGGER.info("    PreDestroy PersonJdbcConnection Bean"); }
+//
+//    @PostConstruct
+//    public void postConstruct() {
+//        LOGGER.info("    postConstruct PersonJdbcConnection Bean");
+//    }
+//
+//    @PreDestroy
+//    public void PreDestroy() { LOGGER.info("    PreDestroy PersonJdbcConnection Bean"); }
 }
