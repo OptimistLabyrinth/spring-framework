@@ -31,17 +31,18 @@ public class SpringMasterClassApplication {
                      = new AnnotationConfigApplicationContext(SpringMasterClassApplication.class)) {
             LOGGER.info("Beans Loaded (AnnotationConfigApplicationContext) -> {}",
                     (Object) annotationConfigApplicationContext.getBeanDefinitionNames());
-            understandingAutoWired(annotationConfigApplicationContext);
-            understandingScope(annotationConfigApplicationContext);
-            understandingComponentScan(annotationConfigApplicationContext);
-            understandingContextsAndDependencyInjection(annotationConfigApplicationContext);
-            understandingPropertiesFromExternalFile(annotationConfigApplicationContext);
+//            understandingAutoWired(annotationConfigApplicationContext);
+//            understandingScope(annotationConfigApplicationContext);
+//            understandingComponentScan(annotationConfigApplicationContext);
+//            understandingContextsAndDependencyInjection(annotationConfigApplicationContext);
+//            understandingPropertiesFromExternalFile(annotationConfigApplicationContext);
+            understandingJunitAndMockito(annotationConfigApplicationContext);
         }
         try (ClassPathXmlApplicationContext classPathXmlApplicationContext
                      = new ClassPathXmlApplicationContext("applicationContext.xml")) {
             LOGGER.info("Beans Loaded (ClassPathXmlApplicationContext) -> {}",
                     (Object) classPathXmlApplicationContext.getBeanDefinitionNames());
-            understandingXmlConfiguration(classPathXmlApplicationContext);
+//            understandingXmlConfiguration(classPathXmlApplicationContext);
         }
     }
 
@@ -94,5 +95,8 @@ public class SpringMasterClassApplication {
 
         LOGGER.info("{}", externalService);
         LOGGER.info("{}", externalService.getServiceUrl());
+    }
+
+    static void understandingJunitAndMockito(AnnotationConfigApplicationContext annotationConfigApplicationContext) {
     }
 }
