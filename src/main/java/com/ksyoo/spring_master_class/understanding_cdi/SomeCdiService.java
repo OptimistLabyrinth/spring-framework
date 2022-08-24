@@ -25,4 +25,13 @@ public class SomeCdiService {
     public void setSomeCdiDao(SomeCdiDao someCdiDao) {
         this.someCdiDao = someCdiDao;
     }
+
+    public int findGreatest() {
+        int greatest = Integer.MIN_VALUE;
+        var data = someCdiDao.getData();
+        for (int value : data)
+            if (greatest < value)
+                    greatest = value;
+        return greatest;
+    }
 }

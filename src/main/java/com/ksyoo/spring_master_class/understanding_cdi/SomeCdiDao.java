@@ -12,4 +12,8 @@ public class SomeCdiDao {
     public SomeCdiDao() {
         LOGGER.info("Some Contexts and Dependency Injection DAO OK");
     }
+
+    public int[] getData() {
+        return new int[]{5, 25, 1515};
+    }
 }

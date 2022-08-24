@@ -5,13 +5,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="com.ksyoo"/>
+<!--    <import resource="classpath:applicationContext.xml"/>-->
 
-<!--    <bean id="XmlDao" class="com.ksyoo.spring_master_class.using_xml_configuration.XmlDao">-->
-<!--        <property name="XmlJdbcConnection" ref="XmlJdbcConnection"/>-->
-<!--    </bean>-->
-
-<!--    <bean id="XmlJdbcConnection" class="com.ksyoo.spring_master_class.using_xml_configuration.XmlJdbcConnection">-->
-<!--    </bean>-->
+    <context:component-scan base-package="com.ksyoo.spring_master_class.understanding_autowired"/>
 
 </beans>
