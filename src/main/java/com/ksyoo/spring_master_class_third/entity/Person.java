@@ -57,6 +57,6 @@ public class Person {
                 ", name='" + name + '\'' +
                 ", location='" + location + '\'' +
                 ", birthDate=" + birthDate +
-                " }";
+                "}";
     }
 }
