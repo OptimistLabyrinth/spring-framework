@@ -1,7 +1,7 @@
 package com.ksyoo.spring_master_class_second;
 
-import com.ksyoo.spring_master_class_second.aop.business1.Service1;
-import com.ksyoo.spring_master_class_second.aop.business2.Service2;
+import com.ksyoo.spring_master_class_second.aop.business.Service1;
+import com.ksyoo.spring_master_class_second.aop.business.Service2;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

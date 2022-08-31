@@ -1,10 +1,8 @@
 package com.ksyoo.spring_master_class_second.aop.aspect;
 
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringBootConfiguration;
@@ -14,36 +12,57 @@ import org.springframework.boot.SpringBootConfiguration;
 public class BeforeAspect {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Before("execution(* com.ksyoo.spring_master_class_second.aop.*.*.*(..))")
-    public void beforeAll(JoinPoint joinPoint) {
+    @Before("execution(* com.ksyoo.spring_master_class_second.aop..*.*(..))")
+    public void before(JoinPoint joinPoint) {
         var signature = joinPoint.getSignature();
-        logger.info("  Intercepted All Method Calls Before: {}", signature);
+        logger.info("    Intercepted Before             : {}", signature);
+    }
+
+    @Before("com.ksyoo.spring_master_class_second.aop.aspect.CommonJoinPointConfig.dataLayerExecution()")
+    public void beforePointCut(JoinPoint joinPoint) {
+        var signature = joinPoint.getSignature();
+        logger.info("    Intercepted Before PointCut    : {}", signature);
+    }
+
+    @Before("com.ksyoo.spring_master_class_second.aop.aspect.CommonJoinPointConfig.allLayerExecution()")
+    public void beforePointCutAll(JoinPoint joinPoint) {
+        var signature = joinPoint.getSignature();
+        logger.info("    Intercepted Before PointCut All: {}", signature);
     }
 
     @AfterReturning(
-            value = "execution(* com.ksyoo.spring_master_class_second.aop.*.*.*(..))",
+            value = "execution(* com.ksyoo.spring_master_class_second.aop.business.*.*(..))",
             returning = "result"
     )
-    public void afterAll(JoinPoint joinPoint, Object result) {
+    public void afterReturn(JoinPoint joinPoint, Object result) {
         var signature = joinPoint.getSignature();
-        logger.info("  Intercepted All Method Calls AfterReturn: {}, value: {}", signature, result);
+        logger.info("    Intercepted after-return       : {}, result: {}", signature, result);
     }
 
-    @After("execution(* com.ksyoo.spring_master_class_second.aop.*.*.*(..))")
+    @After("execution(* com.ksyoo.spring_master_class_second.aop..*.*(..))")
     public void after(JoinPoint joinPoint) {
         var signature = joinPoint.getSignature();
-        logger.info("  Intercepted All Method Calls After: {}", signature);
+        logger.info("    Intercepted After              : {}", signature);
     }
 
-//    @Before("execution(* com.ksyoo.spring_master_class_second.aop.business1.*.*(..))")
-//    public void before1(JoinPoint joinPoint) {
+    @After("com.ksyoo.spring_master_class_second.aop.aspect.CommonJoinPointConfig.businessLayerExecution()")
+    public void afterPointCut(JoinPoint joinPoint) {
+        var signature = joinPoint.getSignature();
+        logger.info("    Intercepted After  PointCut    : {}", signature);
+    }
+
+    @After("com.ksyoo.spring_master_class_second.aop.aspect.CommonJoinPointConfig.allLayerExecution()")
+    public void afterPointCutAll(JoinPoint joinPoint) {
+        var signature = joinPoint.getSignature();
+        logger.info("    Intercepted After  PointCut All: {}", signature);
+    }
+
+//    // Weaving & Weaver
+//    // intercept
+//    @Before("execution(* com.ksyoo.spring_master_class_second..*.*(..))")
+//    public void beforeAllInPackage(JoinPoint joinPoint) {
+//        // advice
 //        var signature = joinPoint.getSignature();
-//        logger.info("  Intercepted Method Calls 1: {}", signature);
-//    }
-//
-//    @Before("execution(* com.ksyoo.spring_master_class_second.aop.business2.*.*(..))")
-//    public void before2(JoinPoint joinPoint) {
-//        var signature = joinPoint.getSignature();
-//        logger.info("  Intercepted Method Calls 2: {}", signature);
+//        logger.info("  Intercepted beforeAllInPackage: {}", signature);
 //    }
 }

@@ -1,10 +1,10 @@
-package com.ksyoo.spring_master_class_second.aop.business1;
+package com.ksyoo.spring_master_class_second.aop.data;
 
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class Dao1 {
+public class Dao2 {
     public String retrieveSomething() {
-        return "Dao1";
+        return "Dao2";
     }
 }

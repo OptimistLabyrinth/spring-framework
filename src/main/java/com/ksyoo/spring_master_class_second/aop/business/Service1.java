@@ -1,5 +1,6 @@
-package com.ksyoo.spring_master_class_second.aop.business1;
+package com.ksyoo.spring_master_class_second.aop.business;
 
+import com.ksyoo.spring_master_class_second.aop.data.Dao1;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
