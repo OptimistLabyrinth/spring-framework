@@ -1,6 +1,5 @@
 package com.ksyoo.spring_master_class_third;
 
-import com.ksyoo.spring_master_class.SpringMasterClassApplication;
 import com.ksyoo.spring_master_class_third.entity.Person;
 import com.ksyoo.spring_master_class_third.jdbc.PersonJdbcDao;
 import org.slf4j.Logger;
@@ -14,7 +13,7 @@ import java.util.Date;
 
 @SpringBootApplication
 public class SpringMasterClassThirdApplication implements CommandLineRunner {
-    private static Logger logger = LoggerFactory.getLogger(SpringMasterClassApplication.class);
+    private static Logger logger = LoggerFactory.getLogger(SpringMasterClassThirdApplication.class);
 
     @Autowired
     PersonJdbcDao personJdbcDao;
