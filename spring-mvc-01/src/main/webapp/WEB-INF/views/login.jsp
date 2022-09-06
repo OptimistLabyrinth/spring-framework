@@ -5,7 +5,15 @@
 <body>
     <p><font color="red">${errorMessage}</font></p>
     <form action="/login.do" method="POST">
-        Name : <input name="name" type="text" /> Password : <input name="password" type="password" /> <input type="submit" />
+        <div>
+            Name : <input name="name" type="text" />
+        </div>
+        <div>
+            Password : <input name="password" type="password" />
+        </div>
+        <div>
+            <input type="submit" />
+        </div>
     </form>
 </body>
 </html>
