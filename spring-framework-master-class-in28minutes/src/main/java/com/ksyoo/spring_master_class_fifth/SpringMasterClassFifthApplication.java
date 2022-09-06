@@ -13,7 +13,7 @@ import java.util.Date;
 
 @SpringBootApplication
 public class SpringMasterClassFifthApplication implements CommandLineRunner {
-    private static Logger logger = LoggerFactory.getLogger(SpringMasterClassFifthApplication.class);
+    private static final Logger logger = LoggerFactory.getLogger(SpringMasterClassFifthApplication.class);
 
     @Autowired
     PersonSpringDataRepository personSpringDataRepository;
@@ -23,7 +23,7 @@ public class SpringMasterClassFifthApplication implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         usingSpringDataH2();
     }
 
@@ -40,9 +40,9 @@ public class SpringMasterClassFifthApplication implements CommandLineRunner {
         logger.info("Inserted new Person -> {}", personSpringDataRepository.save(personNew));
         var updateId = 10003;
         var personUpdate = personSpringDataRepository.findById((long) updateId);
-        personUpdate.ifPresent(person -> {
-            logger.info("Updated Person with ID {} -> {}", updateId, personSpringDataRepository.save(person));
-        });
+        personUpdate.ifPresent(person ->
+            logger.info("Updated Person with ID {} -> {}", updateId, personSpringDataRepository.save(person))
+        );
         var deleteId = 10002;
         var personDelete = personSpringDataRepository.findById((long) deleteId);
         personDelete.ifPresent(person -> {
