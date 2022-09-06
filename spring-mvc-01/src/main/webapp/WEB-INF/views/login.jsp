@@ -4,7 +4,7 @@
 </head>
 <body>
     <p><font color="red">${errorMessage}</font></p>
-    <form action="/login.do" method="POST">
+    <form action="/spring-mvc/login.do" method="POST">
         <div>
             Name : <input name="name" type="text" />
         </div>
